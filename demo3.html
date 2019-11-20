@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标移入移出</title>
+		<style>
+			.erCode-small {
+				width: 50px;
+				height: 50px;
+				position: fixed;
+				right: 20px;
+				top: 50%;
+				margin-top: -25px;
+				background: url(img/bgs.png) no-repeat -159px -51px;
+			}
+			.erCode-small.redEr{
+				background-position-x: -220px;
+			}
+			.erCode-small img {
+				position: absolute;
+				left:-150px;
+				top:-50px;
+				display:none;
+			}
+			.erCode-small .dis{
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="erCode" class="erCode-small">
+			<img src="img/456.png" id='erimg' class="erimg" />
+		</div>
+		<script>
+			var erCode=document.getElementById('erCode');
+			var erimg=document.getElementById('erimg');
+			erCode.onmouseover=function(){
+				erCode.className+=" redEr";
+				erimg.className='dis';
+			}
+			erCode.onmouseout=function(){
+				erCode.className="erCode-small";
+				erimg.className='';
+			}
+		</script>
+	</body>
+
+</html>
